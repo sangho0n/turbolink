@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option optimize_for = LITE_RUNTIME;
+option cc_enable_arenas = true;
+
+message NickName {
+  string value = 1;
+}
+
+message RegisterResponse {
+  bool bSucceed = 1;
+}
+
+service JoinSessionService {
+  rpc RegisterNickname(NickName) returns (RegisterResponse);
+}
+
